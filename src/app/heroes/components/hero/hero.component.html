@@ -1,0 +1,28 @@
+<h1>{{name}}</h1>
+
+
+<dl>
+  <td>Nombre:</td>
+  <dd>{{name}}</dd>
+
+  <td>Edad:</td>
+  <dd>{{age}}</dd>
+
+  <td>Metodo:</td>
+  <dd>{{ getHeroDescription() }}</dd>
+
+  <td>Capitalizado:</td>
+  <dd>{{capitalizwdName}}</dd>
+</dl>
+
+<button *ngIf="name !== 'Spiderman' "  (click)="chageHero()" class="btn btn-primary mx-2">
+  Cambiar Nombre
+</button>
+
+<button *ngIf="age !== 25" (click)="changeAge()" class="btn btn-primary">
+  Cambiar Edad
+</button>
+
+<button (click)="reserForm()" class="btn btn-primary mx-2">
+  Reset
+</button>

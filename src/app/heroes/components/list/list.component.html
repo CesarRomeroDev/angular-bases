@@ -1,0 +1,24 @@
+<h3>Listado de heroes</h3>
+<hr>
+<!--Si esta cindición no se cumple (ngIf=deleHero) muestra los heroes eliminados
+pero si no se cumple (else template) muestra el template "No he borrado nada"-->
+<div *ngIf="deletedHero; else template">
+  <h3>Héroe borrado <small class="text-danger">{{deletedHero}}</small></h3>
+</div>
+
+<ng-template #template> <!--referencia local #template-->
+  <h3>No ha borrado nada</h3>
+</ng-template>
+
+
+<button
+*ngIf="heroName.length > 0"
+(click)="removeLastHero()"
+class="btn btn-outline-danger">
+  Borrar último Héroe
+</button>
+
+<ul class="mt-2 list-group">
+  <li *ngFor="let name of heroName"
+    class="list-group-item">{{ name }}</li>
+</ul>
