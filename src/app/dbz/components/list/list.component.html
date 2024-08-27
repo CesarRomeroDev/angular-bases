@@ -1,0 +1,31 @@
+<h4>Listado</h4>
+
+<!--[ngClass nos ayuda a para añadir clases de manera condicional ]-->
+<ul class="list-group">
+  <li *ngFor="let character of characterList;
+  let i = index;
+  let isFirst = first;
+  let isLast = last;
+  let isEven = even;
+  let isOdd = odd;
+  "
+    class="list-group-item d-flex justify-content-between align-items-center"
+    [ngClass]="{ 'list-group-item-dark': isLast,
+      'list-group-item-primary': isEven}">
+
+    <div>
+      <span class="text-primary">{{i + 1}}. </span>
+      <span>{{character.name}} - </span>
+      <strong>Power: </strong>
+      <span>{{character.power}}</span>
+    </div>
+
+    <button (click)="onDeleteCharacter( character.id )" class="btn btn-danger">X</button>
+
+    <!--<span>Es el primero: {{ isFirst }}</span>-->
+    <!--<span> Es el último: {{ isLast }}</span>-->
+
+    <!--<span> Es Par: {{ isEven }}</span>-->
+    <!--<span> Es impar: {{ isOdd }}</span>-->
+  </li>
+</ul>

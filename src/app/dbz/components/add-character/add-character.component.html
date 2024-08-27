@@ -1,0 +1,30 @@
+<h4>Agregar Personaje</h4>
+<!--NgSubmit se usa para enviar información a un back-end
+lo cual no es necesario agregarlo en el <button>-->
+
+<!--Siempre es necesario agregar [(NgModel)] y name en un formulario
+y (ngSubmit) para enviar información-->
+<!--[(NgModel evento de angular para obtener el valor del objeto)]-->
+<!--name= '' nombre de la llave-->
+<!--() son eventos y [] son atributos-->
+<form class="row" (ngSubmit)="emitCharacter()">
+  <input
+  type="text"
+  [(ngModel)]="character.name"
+  name="name"
+  class="form-control mb-2"
+  placeholder="Nombre">
+
+  <input type="number"
+  [(ngModel)]="character.power"
+  name="power"
+  class="form-control mb-2"
+  placeholder="Poder">
+
+  <button type="submit"
+  class="btn btn-primary">
+    agregar
+  </button>
+
+  <!--<pre>{{character | json }}</pre>-->
+</form>

@@ -1,0 +1,19 @@
+<h1>DBZ Personajes</h1>
+<hr>
+
+<div class="row">
+  <div class="col">
+    <!--[characterList del componente hijo
+    es igual a characterMain del componente padre]-->
+    <!--cuando utilizamos [] o queremos mandar mediante inputs o informacion al
+    componente hijo usamos llaves cuadradas-->
+    <!--() son eventos y [] son atributos-->
+    <app-dbz-list [characterList]="character"
+    (onDelete)="onDeleteCharacter($event)"></app-dbz-list>
+  </div>
+
+  <div class="col">
+    <!--Cuando queremos escuchar eventos se utilizan los parentesis ()-->
+    <app-dbz-character (onNewCharacterAdd)="onNewCharacter($event)"></app-dbz-character>
+  </div>
+</div>
